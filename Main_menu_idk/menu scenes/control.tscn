@@ -11,9 +11,9 @@
 layout_mode = 3
 anchor_right = 0.291
 anchor_bottom = 0.855
-offset_left = 1.0
+offset_left = 305.0
 offset_top = 1.0
-offset_right = -10.232
+offset_right = 293.768
 offset_bottom = 0.959961
 
 [node name="background" type="Sprite2D" parent="."]
