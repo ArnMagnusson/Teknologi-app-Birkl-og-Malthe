@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://gndkkmp5kryv"]
+
+[ext_resource type="Texture2D" uid="uid://bjatf7euh1o6a" path="res://Main_menu_idk/Undermenu/nachfriendstats.png" id="1_b33vj"]
+[ext_resource type="Script" path="res://Main_menu_idk/Undermenu/barkfriendsstatsbuttons.gd" id="2_d4vdm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="nachsprite" type="Sprite2D" parent="."]
+position = Vector2(561, 344)
+texture = ExtResource("1_b33vj")
+script = ExtResource("2_d4vdm")
+
+[node name="invitetogamenacho" type="Button" parent="nachsprite"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -166.0
+offset_top = -70.0
+offset_right = 163.0
+offset_bottom = -28.0
+
+[node name="backtocontrolnacho" type="Button" parent="nachsprite/invitetogamenacho"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = -258.0
+offset_right = 328.0
+offset_bottom = -160.0
+
+[connection signal="pressed" from="nachsprite/invitetogamenacho" to="nachsprite" method="_on_invitetogamenacho_pressed"]
+[connection signal="pressed" from="nachsprite/invitetogamenacho/backtocontrolnacho" to="nachsprite" method="_on_backtocontrolnacho_pressed"]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://3s02eia4trko"]
+
+[ext_resource type="Texture2D" uid="uid://crru1fv5sy1ho" path="res://Main_menu_idk/Nacho_stole_my_texture_artist.png" id="1_mws4q"]
+[ext_resource type="Script" path="res://Main_menu_idk/menu scenes/buttonscriptfinal.gd" id="2_11qm4"]
+[ext_resource type="Texture2D" uid="uid://o4625mtaavvo" path="res://Main_menu_idk/Me_i_guess.png" id="2_t7qh6"]
+[ext_resource type="Texture2D" uid="uid://bhm6ec666pwh5" path="res://Main_menu_idk/the_DM_damdamdam.png" id="3_tv235"]
+[ext_resource type="Texture2D" uid="uid://c68w6hgwgd64t" path="res://Main_menu_idk/The_machocist.png" id="4_knfuf"]
+[ext_resource type="Texture2D" uid="uid://bemjnfo5se3xy" path="res://Main_menu_idk/The_yap_master.png" id="5_7lh2k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.291
+anchor_bottom = 0.855
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -10.232
+offset_bottom = 0.959961
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(163.16, 280.45)
+scale = Vector2(0.881496, 0.819125)
+texture = ExtResource("1_mws4q")
+script = ExtResource("2_11qm4")
+
+[node name="mesa" type="Sprite2D" parent="background"]
+position = Vector2(-0.181739, -82.3438)
+texture = ExtResource("2_t7qh6")
+
+[node name="Birk_buttontest" type="Button" parent="background/mesa"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -167.0
+offset_top = -48.0
+offset_right = 163.0
+offset_bottom = 45.0
+
+[node name="Nacho" type="Sprite2D" parent="background"]
+position = Vector2(-0.181739, 26.3088)
+texture = ExtResource("3_tv235")
+
+[node name="thecriminal" type="Button" parent="background/Nacho"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_bottom = 0.196
+offset_left = -163.0
+offset_top = -48.0
+offset_right = 169.0
+offset_bottom = 26.596
+
+[node name="sebobslæde" type="Sprite2D" parent="background"]
+position = Vector2(-0.181739, 133.741)
+texture = ExtResource("4_knfuf")
+
+[node name="sebbutton" type="Button" parent="background/sebobslæde"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -168.0
+offset_top = -51.0
+offset_right = 168.0
+offset_bottom = 50.0
+
+[node name="theyapper" type="Sprite2D" parent="background"]
+position = Vector2(-0.181739, 244.835)
+texture = ExtResource("5_7lh2k")
+
+[node name="yapperbutton" type="Button" parent="background/theyapper"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -166.0
+offset_top = -49.0
+offset_right = 167.0
+offset_bottom = 49.0
+
+[connection signal="pressed" from="background/mesa/Birk_buttontest" to="background" method="_on_birk_buttontest_pressed"]
+[connection signal="pressed" from="background/mesa/Birk_buttontest" to="background/mesa/Birk_buttontest" method="_on_pressed"]

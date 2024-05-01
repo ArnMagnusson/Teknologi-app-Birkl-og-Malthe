@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgy5ekim5iqf"]
+
+[ext_resource type="Texture2D" uid="uid://csw2qmmlykq8b" path="res://Main_menu_idk/Undermenu/yapfriendstats.png" id="1_evl6i"]
+[ext_resource type="Script" path="res://Main_menu_idk/Undermenu/barkfriendsstatsbuttons.gd" id="2_l8vu8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(695, 350)
+texture = ExtResource("1_evl6i")
+script = ExtResource("2_l8vu8")
+
+[node name="backtocontrolyap" type="Button" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -167.0
+offset_top = -326.0
+offset_right = 165.0
+offset_bottom = -226.0
+
+[node name="invitetogameyap" type="Button" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -167.0
+offset_top = -68.0
+offset_right = 164.0
+offset_bottom = -31.0
+
+[connection signal="pressed" from="Sprite2D/backtocontrolyap" to="Sprite2D" method="_on_backtocontrolyap_pressed"]
+[connection signal="pressed" from="Sprite2D/invitetogameyap" to="Sprite2D" method="_on_invitetogameyap_pressed"]

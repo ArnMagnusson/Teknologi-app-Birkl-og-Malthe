@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvcbgne8d7lr0"]
+
+[ext_resource type="Texture2D" uid="uid://5wlg1pe6fwxm" path="res://Main_menu_idk/Undermenu/birkfriendstats.png" id="1_e57og"]
+[ext_resource type="Script" path="res://Main_menu_idk/Undermenu/barkfriendsstatsbuttons.gd" id="2_xdo4r"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="barkfriendstats" type="Sprite2D" parent="."]
+position = Vector2(573, 343)
+texture = ExtResource("1_e57og")
+script = ExtResource("2_xdo4r")
+
+[node name="invite_to_game" type="Button" parent="barkfriendstats"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -164.0
+offset_top = -68.0
+offset_right = 164.0
+offset_bottom = -33.0
+
+[node name="backbutton" type="Button" parent="barkfriendstats"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -166.0
+offset_top = -325.0
+offset_right = 161.0
+offset_bottom = -230.0
+
+[connection signal="pressed" from="barkfriendstats/invite_to_game" to="barkfriendstats" method="_on_invite_to_game_pressed"]
+[connection signal="pressed" from="barkfriendstats/invite_to_game" to="barkfriendstats/invite_to_game" method="_on_pressed"]
+[connection signal="pressed" from="barkfriendstats/backbutton" to="barkfriendstats" method="_on_backbutton_pressed"]

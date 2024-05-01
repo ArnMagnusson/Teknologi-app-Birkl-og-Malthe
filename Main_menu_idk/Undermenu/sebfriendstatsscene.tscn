@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://pjo4yjk45y6p"]
+
+[ext_resource type="Texture2D" uid="uid://bds5k558nexcj" path="res://Main_menu_idk/Undermenu/sebfreindstats.png" id="1_12f7w"]
+[ext_resource type="Script" path="res://Main_menu_idk/Undermenu/barkfriendsstatsbuttons.gd" id="2_1k1sp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(590, 345)
+texture = ExtResource("1_12f7w")
+script = ExtResource("2_1k1sp")
+
+[node name="invitetogameseb" type="Button" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -169.0
+offset_top = -69.0
+offset_right = 162.0
+offset_bottom = -31.0
+
+[node name="backtocontrolseb" type="Button" parent="Sprite2D/invitetogameseb"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = -258.0
+offset_right = 336.0
+offset_bottom = -161.0
+
+[connection signal="pressed" from="Sprite2D/invitetogameseb" to="Sprite2D" method="_on_invitetogameseb_pressed"]
+[connection signal="pressed" from="Sprite2D/invitetogameseb/backtocontrolseb" to="Sprite2D" method="_on_backtocontrolseb_pressed"]
