@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqqk427j6iqu5"]
+
+[ext_resource type="Script" path="res://true_white_hand.gd" id="1_voecc"]
+[ext_resource type="Texture2D" uid="uid://dj0msbixt61k8" path="res://hand_white.png" id="2_vhd5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06k5e"]
+size = Vector2(14, 45)
+
+[node name="true_white_hand" type="RigidBody2D"]
+position = Vector2(455, 187)
+gravity_scale = 0.0
+script = ExtResource("1_voecc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 17.5)
+shape = SubResource("RectangleShape2D_06k5e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 16.5)
+texture = ExtResource("2_vhd5e")

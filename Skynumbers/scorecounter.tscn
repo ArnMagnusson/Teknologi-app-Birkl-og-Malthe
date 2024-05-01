@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckb51oxsutww3"]
+
+[ext_resource type="Texture2D" uid="uid://b8auus0q7stv" path="res://Skynumbers/sky 0.png" id="1_nwe2w"]
+[ext_resource type="Script" path="res://Skynumbers/scorecounter.gd" id="1_po3on"]
+[ext_resource type="Texture2D" uid="uid://cv7r8janom7sb" path="res://Skynumbers/sky 1.png" id="2_tr67x"]
+[ext_resource type="Texture2D" uid="uid://dw7lwq8yxqn7n" path="res://Skynumbers/sky 2.png" id="3_s7gcl"]
+[ext_resource type="Texture2D" uid="uid://tyrcvtecqcqn" path="res://Skynumbers/sky 3.png" id="4_00ybu"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = 84.0
+offset_right = -1016.0
+offset_bottom = -504.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_po3on")
+
+[node name="sky0" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_nwe2w")
+
+[node name="sky1" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_tr67x")
+
+[node name="sky2" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_s7gcl")
+
+[node name="sky3" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_00ybu")

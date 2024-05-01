@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0g0kowyrh0pr"]
+
+[ext_resource type="Script" path="res://EDGEDESPAWNER.gd" id="1_s5t6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6qki"]
+size = Vector2(19, 492)
+
+[node name="EDGEDESPAWNER" type="Area2D"]
+position = Vector2(384, 210)
+script = ExtResource("1_s5t6q")
+
+[node name="colissiondetector" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 34)
+shape = SubResource("RectangleShape2D_f6qki")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

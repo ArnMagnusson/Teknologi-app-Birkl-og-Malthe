@@ -1,0 +1,86 @@
+[gd_scene load_steps=14 format=3 uid="uid://da4vxivbtq732"]
+
+[ext_resource type="PackedScene" uid="uid://cw5am0h0yo558" path="res://Walls.tscn" id="1_frjri"]
+[ext_resource type="Script" path="res://Main pong.gd" id="1_ufwyr"]
+[ext_resource type="PackedScene" uid="uid://01rwixpqt4iv" path="res://Paddle_padlle_padlle/White_hand.tscn" id="2_i0j62"]
+[ext_resource type="Texture2D" uid="uid://l2w5c2jg4530" path="res://Sky.png" id="2_jkkui"]
+[ext_resource type="Texture2D" uid="uid://dote03gbewso1" path="res://grass.png" id="2_tq2qk"]
+[ext_resource type="Texture2D" uid="uid://d1nrykyvrcq3i" path="res://Pong background.png" id="5_wvflc"]
+[ext_resource type="PackedScene" uid="uid://cqqk427j6iqu5" path="res://Paddle_padlle_padlle/true_white_hand.tscn" id="6_isa1m"]
+[ext_resource type="PackedScene" uid="uid://bjao5newd4hvp" path="res://Heatball/heatball.tscn" id="7_nlu62"]
+[ext_resource type="PackedScene" uid="uid://0g0kowyrh0pr" path="res://edge.tscn" id="8_bcuci"]
+[ext_resource type="PackedScene" uid="uid://ckb51oxsutww3" path="res://Skynumbers/scorecounter.tscn" id="10_ej5ei"]
+[ext_resource type="Script" path="res://Skynumbers/scorecounter.gd" id="11_ftfix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2cuh"]
+size = Vector2(1158, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l81jl"]
+size = Vector2(1164.5, 25)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ufwyr")
+
+[node name="backgroundsprite" type="Sprite2D" parent="."]
+position = Vector2(572, 246)
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("5_wvflc")
+
+[node name="Wallcontainer" type="Node" parent="."]
+
+[node name="Roof static body" parent="Wallcontainer" instance=ExtResource("1_frjri")]
+collision_layer = 255
+collision_mask = 115
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wallcontainer/Roof static body"]
+position = Vector2(569, 0)
+shape = SubResource("RectangleShape2D_d2cuh")
+
+[node name="roofgrasssprite" type="Sprite2D" parent="Wallcontainer/Roof static body/CollisionShape2D"]
+position = Vector2(4.50003, 0)
+scale = Vector2(2.01933, 1)
+texture = ExtResource("2_jkkui")
+
+[node name="Floor static body" type="StaticBody2D" parent="Wallcontainer"]
+
+[node name="Floorcollisionshape" type="CollisionShape2D" parent="Wallcontainer/Floor static body"]
+position = Vector2(569, 482.5)
+shape = SubResource("RectangleShape2D_l81jl")
+
+[node name="floor grass sprite" type="Sprite2D" parent="Wallcontainer/Floor static body/Floorcollisionshape"]
+position = Vector2(5, 0)
+scale = Vector2(2.0246, 1)
+texture = ExtResource("2_tq2qk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(573, 243)
+
+[node name="p1paddle" parent="." instance=ExtResource("2_i0j62")]
+position = Vector2(59, 182)
+speed = 750
+friction = 4.0
+
+[node name="p2paddle" parent="." instance=ExtResource("6_isa1m")]
+position = Vector2(1057, 182)
+lock_rotation = true
+speed = 750
+friction = 4.0
+
+[node name="leftedge" parent="." instance=ExtResource("8_bcuci")]
+position = Vector2(15, 206)
+
+[node name="Heart" parent="." instance=ExtResource("7_nlu62")]
+position = Vector2(571, 182)
+collision_layer = 255
+collision_mask = 255
+initial_speed_heart = 100.0
+speed_multiplier = 2.0
+
+[node name="rightedge" parent="." instance=ExtResource("8_bcuci")]
+position = Vector2(1134, 207)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("10_ej5ei")]
+script = ExtResource("11_ftfix")
+
+[connection signal="point_scored" from="leftedge" to="." method="_on_leftedge_p2_scored"]
+[connection signal="point_scored" from="rightedge" to="." method="_on_rightedge_p1_scored"]
